@@ -1,10 +1,14 @@
-import React from "react";
-import { Container } from "./styles";
+import React from 'react';
+import { useSelector } from 'react-redux';
 
 export default function CourseList() {
+  const courses = useSelector((state) => state.data);
+
   return (
-    <Container>
-      <p>Oe</p>
-    </Container>
+    <ul>
+      {courses.map((course) => (
+        <li key={course}>{course}</li>
+      ))}
+    </ul>
   );
 }
